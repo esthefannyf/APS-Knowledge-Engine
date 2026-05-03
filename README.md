@@ -1,6 +1,6 @@
 # APS - Knowledge Engine
 
-Projeto de Lógica e Matemática Discreta: construção de uma base de conhecimento em Prolog a partir do dataset  **TMDB 5000 Movies** .
+Projeto desenvolvido na disciplina de Lógica e Matemática Discreta.
 
 ## Objetivo
 
@@ -68,7 +68,12 @@ Abra o SWI-Prolog ou o SWISH e carregue os fatos e as regras do arquivo `queries
 
 No SWISH, cole o conteúdo dos dois arquivos na área  **Program** .
 
+> **Observação:**  
+> As consultas avançadas foram desenvolvidas utilizando técnicas como agregação, ordenação e inferência lógica, atendendo ao critério de **perguntas sofisticadas** da avaliação.
+
 ## Queries e explicação
+
+### Consultas simples (auxiliares)
 
 ### 1. Filmes bem avaliados
 
@@ -105,6 +110,7 @@ Exemplo:
 ```
 
 ---
+### Consultas avançadas 
 
 ### 3. Ranking de lucro
 
@@ -160,7 +166,7 @@ Exemplo:
 
 ```prolog
 filme_subestimado(Titulo) :-
-    filme(_, Titulo, _, _, _, Nota, Votos, _, _, _),
+    filme(_, Titulo, _, _, _, _, Nota, Votos, _, _),
     Nota >= 7,
     Votos < 100.
 ```
@@ -287,6 +293,7 @@ Exemplo:
 ## Observações
 
 * Os nomes foram normalizados para o formato aceito pelo Prolog.
-* Datas seguem o padrão `data(ano,mes,dia)`.
-* As consultas usam agregação, ordenação, comparação e composição lógica.
-* O projeto foi pensado para permitir respostas explicáveis e inferência sobre a base.
+* Datas seguem o padrão `data(ano,mes,dia)`, pois o ano é o atributo mais relevante para inferência temporal, facilitando consultas como agrupamento por década e comparações entre períodos.
+* As consultas utilizam agregação, ordenação, comparação e inferência lógica.
+* As consultas principais foram projetadas para extrair conhecimento da base, atendendo ao critério de **perguntas sofisticadas** da avaliação.
+* As consultas simples são utilizadas apenas para validação e exploração inicial da base.
